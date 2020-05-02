@@ -1,0 +1,26 @@
+{
+  "name": "laravel-view-components/elements",
+  "description": "Laravel 7.x element view components",
+  "keywords": ["laravel", "view components"],
+  "license": "MIT",
+  "require": {
+    "laravel/framework": "^7.0",
+    "danswiser/tabler-preset": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "LaravelViewComponents\\": "src/"
+    }
+  },
+  "suggest": {
+    "laravel-view-components/forms": "Additional UI Elements",
+    "laravel-view-components/notifications": "Additional UI Elements"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "LaravelViewComponents\\ElementServiceProvider"
+      ]
+    }
+  }
+}
