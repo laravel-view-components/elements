@@ -10,9 +10,9 @@ class Avatar extends Component
     /**
      * The progress id attribute.
      *
-     * @var string
+     * @var User Model
      */
-    public $id;
+    public $user;
     /**
      * The progress name.
      *
@@ -30,15 +30,12 @@ class Avatar extends Component
      * Create a new component instance.
      *
      * @param  string   $name
-     * @param  string   $type
      *
      * @return void
      */
-    public function __construct($name = "toast", $type = "success")
+    public function __construct($user)
     {
-        $this->id = 'input-' . Str::kebab(class_basename(get_class($this))) . '-' . md5($name);
-        $this->name = $name;
-        $this->type = $type;
+        $this->user = $user;
     }
 
     /**

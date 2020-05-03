@@ -1,1 +1,3 @@
-<span class="avatar" style="background-image: url('https://randomuser.me/api/portraits/men/32.jpg')"></span>
+<span {{ $attributes->merge(['class' => 'avatar mr-2']) }} style="background-image: url('https://api.adorable.io/avatars/36/{{$user->email}}')">
+  <span class="badge bg-success"></span>
+</span>
