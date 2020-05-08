@@ -8,37 +8,46 @@ use Illuminate\View\Component;
 class Progress extends Component
 {
     /**
-     * The progress id attribute.
+     * The progress color.
      *
      * @var string
      */
-    public $id;
+    public $color;
     /**
-     * The progress name.
+     * The progress size.
      *
      * @var string
      */
-    public $name;
+    public $size;
     /**
-     * The alert type.
+     * The progress value.
      *
-     * @var string
+     * @var int
      */
-    public $type;
+    public $progress;
+    /**
+     * Whether or not the progress is indeterminate.
+     *
+     * @var bool
+     */
+    public $indeterminate;
 
     /**
      * Create a new component instance.
      *
-     * @param  string   $name
-     * @param  string   $type
+     * @param  string   $color
+     * @param  string   $size
+     * @param  int      $progress
+     * @param  bool     $indeterminate
      *
      * @return void
      */
-    public function __construct($name = "toast", $type = "success")
+    public function __construct($color = "green", $size = '', $progress = 0, $indeterminate = false)
     {
-        $this->id = 'input-' . Str::kebab(class_basename(get_class($this))) . '-' . md5($name);
-        $this->name = $name;
-        $this->type = $type;
+        $this->color          = $color;
+        $this->size           = $size;
+        $this->progress       = $progress;
+        $this->indeterminate  = $indeterminate;
     }
 
     /**
