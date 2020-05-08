@@ -16,12 +16,15 @@ class ElementServiceProvider extends LaravelServiceProvider
   {
     $this->loadViewComponentsAs('element', [
         Components\Element\Progress::class,
-        Components\Element\Timeline::class,
     ]);
     $this->loadViewComponentsAs('element-user', [
         Components\Element\User\Avatar::class,
         Components\Element\User\AvatarList::class,
         Components\Element\User\InfoBlock::class,
+    ]);
+    $this->loadViewComponentsAs('element-timeline', [
+        Components\Element\Timeline\Wrapper::class,
+        Components\Element\Timeline\Item::class,
     ]);
 
     $this->loadViewsFrom(__DIR__.'/Views', 'components');
