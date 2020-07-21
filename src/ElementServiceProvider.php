@@ -26,6 +26,10 @@ class ElementServiceProvider extends LaravelServiceProvider
         Components\Element\Timeline\Wrapper::class,
         Components\Element\Timeline\Item::class,
     ]);
+    $this->loadViewComponentsAs('element-steps', [
+        Components\Element\Steps\Wrapper::class,
+        Components\Element\Steps\Item::class,
+    ]);
 
     $this->loadViewsFrom(__DIR__.'/Views', 'components');
     $this->publishes([
